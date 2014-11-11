@@ -1,7 +1,7 @@
-class VerboseString
+class VerboseString < String
 
   def initialize(string)
-    raise ArgumentError.new unless string.is_a? String
+    super string
   end
 
 end

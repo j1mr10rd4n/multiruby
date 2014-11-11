@@ -6,4 +6,5 @@ group :test do
   gem "minitest"
   gem "minitest-reporters"
   gem "minitest-spec-context"
+  gem "faker"
 end

@@ -3,6 +3,9 @@ GEM
   specs:
     ansi (1.4.3)
     builder (3.2.2)
+    faker (1.1.2)
+      i18n (~> 0.5)
+    i18n (0.6.11)
     minitest (5.4.2)
     minitest-reporters (1.0.7)
       ansi
@@ -17,6 +20,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  faker
   minitest
   minitest-reporters
   minitest-spec-context
