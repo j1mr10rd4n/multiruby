@@ -33,18 +33,35 @@ describe VerboseString do
     end
   end
 
-  describe "#description" do
-    subject { VerboseString.new wrapped_string }
-    let(:wrapped_string) { Faker::Lorem.word }
-    let(:expected_output) { <<-END
+  if RUBY_VERSION == "1.9.3"
+    describe "#description" do
+      subject { VerboseString.new wrapped_string }
+      let(:wrapped_string) { Faker::Lorem.word }
+      let(:expected_output) { <<-END
 String content is: #{wrapped_string}
 From Ruby (v1.9.3) - length: #{wrapped_string.length}, encoding: #{wrapped_string.encoding}
 From C - ruby 1.9.3p545 (2014-02-24 revision 45159) [x86_64-darwin13.1.0]
 END
-    }
+      }
 
-    it "returns the wrapped string with a description" do
-      subject.description.must_equal expected_output
+      it "returns the wrapped string with a description" do
+        subject.description.must_equal expected_output
+      end
+    end
+  elsif RUBY_VERSION == "2.0.0"
+    describe "#description" do
+      subject { VerboseString.new wrapped_string }
+      let(:wrapped_string) { Faker::Lorem.word }
+      let(:expected_output) { <<-END
+String content is: #{wrapped_string}
+From C - ruby 2.0.0p481 (2014-05-08 revision 45883) [x86_64-darwin13.3.0]
+From Ruby (v2.0.0) - length: #{wrapped_string.length}, encoding: #{wrapped_string.encoding}
+END
+      }
+
+      it "returns the wrapped string with a description" do
+        subject.description.must_equal expected_output
+      end
     end
   end
 
