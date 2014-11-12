@@ -39,6 +39,7 @@ describe VerboseString do
     let(:expected_output) { <<-END
 String content is: #{wrapped_string}
 From Ruby (v1.9.3) - length: #{wrapped_string.length}, encoding: #{wrapped_string.encoding}
+From C - ruby 1.9.3p545 (2014-02-24 revision 45159) [x86_64-darwin13.1.0]
 END
     }
 

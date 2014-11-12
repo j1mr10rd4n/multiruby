@@ -1,14 +1,15 @@
-class VerboseString < String
+require 'verbose_string/verbose_string'
 
-  def initialize(string)
-    super string
-  end
+class VerboseString
 
   def description
-    <<-END
-String content is: #{self.to_s}
-From Ruby (v#{RUBY_VERSION}) - length: #{self.length}, encoding: #{self.encoding}
-END
+    ["String content is: #{self.to_s}",  self.description_from_ruby, self.description_from_c, ""].join("\n")
+  end
+
+  protected
+
+  def description_from_ruby
+    "From Ruby (v#{RUBY_VERSION}) - length: #{self.length}, encoding: #{self.encoding}"
   end
 
 end

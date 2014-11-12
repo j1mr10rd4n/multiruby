@@ -14,6 +14,8 @@ GEM
       ruby-progressbar
     minitest-spec-context (0.0.3)
     rake (10.3.2)
+    rake-compiler (0.9.3)
+      rake
     ruby-progressbar (1.7.0)
 
 PLATFORMS
@@ -25,3 +27,4 @@ DEPENDENCIES
   minitest-reporters
   minitest-spec-context
   rake
+  rake-compiler
